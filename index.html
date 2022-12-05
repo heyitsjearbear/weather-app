@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>What Should You Wear?</title>
-</head>
-<body>
-    <div class = "heading">
-        <h1 class = "title">Weather app</h1>
-        <h2 class = "subtitle">This is my crack at a weather app</h2>
-        <p class = "heading-image>">image here</p>
+  </head>
+  <body>
+    <div class="heading">
+      <h1 class="title">Weather app</h1>
+      <h2 class="subtitle">This is my crack at a weather app</h2>
+      <p class="heading-image>">image here</p>
     </div>
-    <form>
-        <label for="fname">Enter Location Here:</label><br>
-        <input type="text" id="fname" name="fname"><br>
+    <div class="input-field">
+      <form>
+        <label for="fname">Enter Location Here:</label><br />
+        <input type="text" id="fname" name="fname" /><br />
       </form>
-      <div class = "current-info">
-        <p class = "date">date here</p>
-        <p class = "time">time here</p>
+    </div>
+    <div class="current-info">
+      <p class="date">date here</p>
+      <p class="time">time here</p>
+    </div>
+    <div class="weather">
+      <div class="degrees-celsius">degrees/celsius here</div>
+      <div class="weather-img">weather image here</div>
+      <div class="clothing-info">
+        According to the weather you should wear this
       </div>
-      <div class = "weather">
-        <div class = "degrees-celsius">degrees/celsius here</div>
-        <div class = weather-img>weather image here</div>
-        <div class = "clothing-info">According to the weather you should wear this</div>
-      </div>
+    </div>
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
