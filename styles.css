@@ -1,10 +1,13 @@
 body{
-    background-color: aqua;
+    background-image: url(assets/default\ background.jpg);
+    background-size: contain;
 }
 .heading{
     text-align: center;
+    background-color: #21616E;
 }
 .input-field{
+    background-color: #21616E;
     display: flex;
     justify-content: center;
 }
