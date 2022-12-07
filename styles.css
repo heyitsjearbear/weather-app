@@ -1,6 +1,7 @@
 body{
     background-image: url(assets/default\ background.jpg);
     background-size: contain;
+    background-position: fixed;
 }
 .heading{
     text-align: center;
