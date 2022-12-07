@@ -1,3 +1,6 @@
+let timeElement = document.getElementById("actualTime");
+let dateElement = document.getElementById("actualDate");
+
 function getMonth(month) {
   switch (month) {
       case 1:
@@ -26,9 +29,6 @@ function getMonth(month) {
       return "December";
   }
 }
-
-let timeElement = document.getElementById("actualTime");
-let dateElement = document.getElementById("actualDate");
 setInterval(function () {
   let currentTime = new Date();
   let month = currentTime.getMonth();
