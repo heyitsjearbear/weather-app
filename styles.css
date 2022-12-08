@@ -23,3 +23,13 @@ html {
     border: none;
     border-radius: 80px;
 }
+.main-weather-info{
+    background-color: #21616E;
+    display: flex;
+}
+.degree-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
