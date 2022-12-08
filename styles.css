@@ -1,8 +1,11 @@
-body{
-    background-image: url(assets/default\ background.jpg);
-    background-size: contain;
-    background-position: fixed;
-}
+html { 
+    background: url("https://source.unsplash.com/random/1920x1080/?nature") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 .heading{
     text-align: center;
     background-color: #21616E;
