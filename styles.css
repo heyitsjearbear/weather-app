@@ -15,3 +15,11 @@ html {
     display: flex;
     justify-content: center;
 }
+#submit{
+    border-radius: 50%;
+    border: none;
+}
+#city-name{
+    border: none;
+    border-radius: 80px;
+}
