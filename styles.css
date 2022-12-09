@@ -15,6 +15,9 @@ html {
     display: flex;
     justify-content: center;
 }
+.main-weather-info{
+    text-align: center;
+}
 #submit{
     border-radius: 50%;
     border: none;
@@ -23,13 +26,30 @@ html {
     border: none;
     border-radius: 80px;
 }
-.main-weather-info{
+
+.weather{
     background-color: #21616E;
     display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 480px;
 }
-.degree-info{
+.extra-stats{
     display: flex;
     flex-direction: column;
+    width: 300px;
+}
+
+.row-1{
+    display: flex;
     justify-content: space-around;
-    
+}
+.row-2{
+    display: flex;
+    justify-content: space-around;
+}
+.stat{
+    display: flex;
+    flex-direction: column;
+    width: 45px;
 }
