@@ -4,17 +4,18 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+}
+
+.title{
+    color: #b7c7d7;
+}
 
 .heading{
     text-align: center;
-    background-color: #21616E;
+    background-color: #545c5f;
+    border-radius: 15px;
 }
-.input-field{
-    background-color: #21616E;
-    display: flex;
-    justify-content: center;
-}
+
 .main-weather-info{
     text-align: center;
 }
@@ -28,7 +29,7 @@ html {
 }
 
 .weather{
-    background-color: #21616E;
+    background-color: #545c5f;
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
