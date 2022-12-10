@@ -4,16 +4,20 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+}
+
+.top{
+    display: flex;
+}
 
 .heading{
-    text-align: center;
+    text-align: left;
     background-color: #21616E;
 }
 .input-field{
     background-color: #21616E;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 .main{
     background-color: purple;
