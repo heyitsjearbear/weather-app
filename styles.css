@@ -15,6 +15,13 @@ html {
     display: flex;
     justify-content: center;
 }
+.main{
+    background-color: purple;
+    text-align: center;
+}
+.location-title{
+    padding-bottom: 22px;
+}
 .main-weather-info{
     text-align: center;
 }
@@ -28,7 +35,6 @@ html {
 }
 
 .weather{
-    background-color: #21616E;
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
