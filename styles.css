@@ -4,27 +4,16 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-.top{
-    display: flex;
-}
+  }
 
 .heading{
-    text-align: left;
+    text-align: center;
     background-color: #21616E;
 }
 .input-field{
     background-color: #21616E;
     display: flex;
-    justify-content: left;
-}
-.main{
-    background-color: purple;
-    text-align: center;
-}
-.location-title{
-    padding-bottom: 22px;
+    justify-content: center;
 }
 .main-weather-info{
     text-align: center;
@@ -39,6 +28,7 @@ html {
 }
 
 .weather{
+    background-color: #21616E;
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
