@@ -1,74 +1,77 @@
-.heading { 
-    background: url("https://source.unsplash.com/random/1920x1080/?mountain,landscape") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 500px;
-    text-align: center;
-    background-color: #252525d0;
+.heading {
+  background: url("https://source.unsplash.com/random/1920x1080/?mountain,landscape")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+  text-align: center;
+  background-color: #252525d0;
 }
-body{
-    background-color: #3C587D;
-}
-
-.heading-elements{
-    background-color: #252525d0;
-    margin: 0 auto;
-    width: 480px;
-}
-.title{
-    color: white;
-    font-size: 54px;
+body {
+  background-color: #3c587d;
 }
 
-.main-weather-info{
-    text-align: center;
+.heading-elements {
+  background-color: #252525d0;
+  margin: 0 auto;
+  width: 480px;
 }
-#submit{
-    border-radius: 50%;
-    border: none;
-}
-
-.location-title{
-    color: white;
-}
-#city-name{
-    border: none;
-    border-radius: 80px;
+.title {
+  color: white;
+  font-size: 54px;
 }
 
-.weather{
-    color: #dde8f0;
-    background-color: #252525d0;
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    width: 480px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
+.main-weather-info {
+  text-align: center;
 }
-.extra-stats{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+#submit {
+  border-radius: 50%;
+  border: none;
 }
 
-.row-1{
-    display: flex;
-    justify-content: space-around;
+.location-title {
+  color: white;
 }
-.row-2{
-    display: flex;
-    justify-content: space-around;
+#city-name {
+  border: none;
+  border-radius: 80px;
 }
-.stat{
-    display: flex;
-    flex-direction: column;
-    width: 45px;
+
+.weather {
+  color: #dde8f0;
+  background-color: #252525d0;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 480px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.next-5-days{
-    display: flex;
-    justify-content: space-evenly;
+.extra-stats {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.row-1 {
+  display: flex;
+  justify-content: space-around;
+}
+.row-2 {
+  display: flex;
+  justify-content: space-around;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  width: 45px;
+}
+.next-5-days {
+  display: flex;
+  justify-content: space-evenly;
+  border: 0 solid black;
+  outline-style: solid;
+  border-radius: 20px;
 }
