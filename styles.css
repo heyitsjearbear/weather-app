@@ -1,16 +1,14 @@
 .heading {
+  height: 500px;
+  text-align: center;
+}
+body {
   background: url("https://source.unsplash.com/random/1920x1080/?mountain,landscape")
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 500px;
-  text-align: center;
-  background-color: #252525d0;
-}
-body {
-  background-color: #3c587d;
 }
 
 .heading-elements {
@@ -74,4 +72,5 @@ body {
   border: 0 solid black;
   outline-style: solid;
   border-radius: 20px;
+  background-color: #252525d0;
 }
