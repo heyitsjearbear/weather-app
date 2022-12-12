@@ -76,10 +76,11 @@ body {
   justify-content: space-evenly;
   border-radius: 20px;
   color: white;
-  width: 500px;
   margin: 0 auto;
+  width: 700px;
 }
 .card{
   background-color: rgba(255, 255, 255, 0.168);
   text-align: center;
+  width: 100px;
 }
