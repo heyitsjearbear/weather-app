@@ -10,6 +10,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Alfa Slab One', cursive;
+  -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: black;
 }
 
 .heading-elements {
@@ -57,16 +59,12 @@ body {
   justify-content: center;
 }
 
-.row-1 {
+.row {
   display: flex;
   justify-content: space-around;
-  color:black;
+  color:white;
 }
-.row-2 {
-  display: flex;
-  justify-content: space-around;
-  color: black;
-}
+
 .stat {
   display: flex;
   flex-direction: column;
