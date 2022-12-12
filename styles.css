@@ -69,8 +69,9 @@ body {
 .next-5-days {
   display: flex;
   justify-content: space-evenly;
-  border: 0 solid black;
-  outline-style: solid;
   border-radius: 20px;
   background-color: #252525d0;
+  color: white;
+  width: 500px;
+  margin: 0 auto;
 }
