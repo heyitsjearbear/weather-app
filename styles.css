@@ -22,8 +22,8 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Alfa Slab One', cursive;
-  -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: .35px;
+  -webkit-text-stroke-color: black;
 }
 
 .heading-elements {
