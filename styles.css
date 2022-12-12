@@ -30,8 +30,9 @@ body {
 }
 
 .location-title {
-  text-align: left;
+  text-align: center;
   color: white;
+  font-size: 66px;
 }
 #city-name {
   border: none;
@@ -40,7 +41,6 @@ body {
 
 .weather {
   color: #dde8f0;
-  background-color: #252525d0;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
@@ -52,15 +52,19 @@ body {
   display: flex;
   flex-direction: column;
   width: 300px;
+  background-color: rgba(255, 255, 255, 0.168);
+  justify-content: center;
 }
 
 .row-1 {
   display: flex;
   justify-content: space-around;
+  color:black;
 }
 .row-2 {
   display: flex;
   justify-content: space-around;
+  color: black;
 }
 .stat {
   display: flex;
@@ -71,8 +75,11 @@ body {
   display: flex;
   justify-content: space-evenly;
   border-radius: 20px;
-  background-color: #252525d0;
   color: white;
   width: 500px;
   margin: 0 auto;
+}
+.card{
+  background-color: rgba(255, 255, 255, 0.168);
+  text-align: center;
 }
