@@ -18,7 +18,8 @@ body {
 }
 .title {
   color: white;
-  font-size: 54px;
+  font-size: 26px;
+  padding-bottom: 20px;
 }
 
 .main-weather-info {
