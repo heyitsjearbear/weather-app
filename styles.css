@@ -3,7 +3,7 @@
   text-align: center;
 }
 body {
-  background: url("https://source.unsplash.com/random/1920x1080/?mountain,landscape")
+  background: url("assets/mtnlandscape.jpg")
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -12,7 +12,6 @@ body {
 }
 
 .heading-elements {
-  background-color: #252525d0;
   margin: 0 auto;
   width: 480px;
 }
@@ -31,6 +30,7 @@ body {
 }
 
 .location-title {
+  text-align: left;
   color: white;
 }
 #city-name {
