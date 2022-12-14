@@ -1,20 +1,30 @@
+//function returns sunrise/sunset time as string
+function getSunriseSunset(unix_timestamp) {
+  let date = new Date(unix_timestamp * 1000);
+  let hour = date.getHours();
+  let min = date.getMinutes();
+  if (hour > 12) {
+    return `${hour - 12}:${min}PM`;
+  }
+  return `${hour}:${min}AM`;
+}
+
+//returns date from unix UTX
 function unixTimeConverter(unixTimestamp) {
   let date = new Date(unix_timestamp * 1000);
   let day = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
-  return `${month+1}/${day}/${year}`;
-
-
+  return `${month + 1}/${day}/${year}`;
 }
-function getDayName(dateStr)
-{
-    var date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", { weekday: 'long' });        
+//returns weekday from date
+function getDayName(dateStr) {
+  var date = new Date(dateStr);
+  return date.toLocaleDateString("en-US", { weekday: "long" });
 }
 
+//function returns inputted kelvin to fahrenheit
 const kelvinToFahrenheit = (kelvin) => 1.8 * (kelvin - 273) + 32;
-
 
 //function returns a string that capitalizes each word of a
 //paramter string
@@ -31,6 +41,18 @@ function capitalizeCity(city) {
 let submit = document.querySelector("#submit");
 //retrieve city name
 let cityName = document.querySelector(".location-title");
+//retrieve currentTemp
+let mainTemp = document.querySelector(".deg");
+//retrieve generalization
+let generalization = document.querySelector(".generalization");
+let high = document.querySelector('#high');
+let low = document.querySelector('#low');
+let wind = document.querySelector('#wind');
+let rain = document.querySelector('#rain');
+let sunrise = document.querySelector('#sunrise');
+let sunset = document.querySelector('#sunset');
+
+//submit button event
 submit.addEventListener("click", () => {
   let city = document.querySelector("#city-name").value;
   fetch(
@@ -46,12 +68,33 @@ submit.addEventListener("click", () => {
       }
     })
     .then((data) => {
+      //function returns true if description of current day
+      //contain rain
+      //else return false and change rain to 0 percent
+      function isRaining(description) {
+        if (description == "Rain") {
+          return true;
+        }
+        return false;
+      }
       console.log(data);
+      let currTempVal = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp"])) +"°F";
+      let currTempHigh = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp_max"]))+"°F";
+      let currTempLow = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp_min"]))+"°F";
+      let currentDescription = data["list"]["0"]["weather"]["0"]["description"];
+      let currentRainPercentage = (data["list"]["0"]["pop"] * 100) + "%";
+      let sunriseTime = getSunriseSunset(data["city"]["sunrise"]);
+      let sunsetTime = getSunriseSunset(data["city"]["sunset"]);
+      let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "m/s";
       cityName.innerHTML = capitalizeCity(city);
-      //var tempValue = data["main"]["temp"];
-      //var nameValue = data["name"];
-      //var descValue = data["weather"][0]["description"];
-
+      mainTemp.innerHTML = currTempVal;
+      generalization.innerHTML = currentDescription;
+      high.innerHTML = currTempHigh;
+      low.innerHTML = currTempLow;
+      wind.innerHTML = windSpeed;
+      rain.innerHTML = currentRainPercentage;
+      sunrise.innerHTML = sunriseTime;
+      sunset.innerHTML = sunsetTime;
       city = "";
     })
     .catch((err) => alert("Invalid city Name! Try Again."));
