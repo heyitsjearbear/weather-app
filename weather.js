@@ -9,6 +9,8 @@ function getSunriseSunset(unix_timestamp) {
   return `${hour}:${min}AM`;
 }
 
+
+
 //returns date from unix UTX
 function unixTimeConverter(unixTimestamp) {
   let date = new Date(unix_timestamp * 1000);
@@ -79,8 +81,16 @@ submit.addEventListener("click", () => {
       }
       console.log(data);
       let currTempVal = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp"])) +"°F";
-      let currTempHigh = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp_max"]))+"°F";
-      let currTempLow = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp_min"]))+"°F";
+      let currTempHigh = Math.round(data["list"]["0"]["main"]["temp"]);
+      for (let i = 1; i < 8; i++){
+        currTempHigh = Math.max(currTempHigh,Math.round(data["list"][`${i}`]["main"]["temp"]));
+      }
+      currTempHigh = kelvinToFahrenheit(currTempHigh) + "°F";
+      let currTempLow = Math.round(data["list"]["0"]["main"]["temp"]);
+      for (let i = 1; i < 8; i++){
+        currTempLow = Math.min(currTempLow,Math.round(data["list"][`${i}`]["main"]["temp"]));
+      }
+      currTempLow = kelvinToFahrenheit(currTempLow) + "°F";
       let currentDescription = data["list"]["0"]["weather"]["0"]["description"];
       let currentRainPercentage = (data["list"]["0"]["pop"] * 100) + "%";
       let sunriseTime = getSunriseSunset(data["city"]["sunrise"]);
