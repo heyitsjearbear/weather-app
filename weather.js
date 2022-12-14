@@ -25,9 +25,6 @@ function getDayName(dateStr) {
   return date.toLocaleDateString("en-US", { weekday: "long" });
 }
 
-//function returns inputted kelvin to fahrenheit
-const kelvinToFahrenheit = (kelvin) => 1.8 * (kelvin - 273) + 32;
-
 //function returns a string that capitalizes each word of a
 //paramter string
 function capitalizeCity(city) {
@@ -62,7 +59,7 @@ submit.addEventListener("click", () => {
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
       city +
-      "&appid=98c13a7725d224f508da1c6f66e1423a"
+      "&appid=98c13a7725d224f508da1c6f66e1423a&units=imperial"
   )
     .then((response) => {
       if (response.status >= 200 && response.status <= 299) {
@@ -77,7 +74,7 @@ submit.addEventListener("click", () => {
         
       // }
       console.log(data);
-      let currTempVal = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp"])) + "°F";
+      let currTempVal = Math.round(data["list"]["0"]["main"]["temp"]) + "°F";
       //here we don't have data in JSON to determine high/low
       //so we have to iterate over 8 hour time period to figure out low,
       ///might be off a little bit but thats okay :)
@@ -85,12 +82,12 @@ submit.addEventListener("click", () => {
       for (let i = 1; i < 8; i++){
         currTempHigh = Math.max(currTempHigh,Math.round(data["list"][`${i}`]["main"]["temp"]));
       }
-      currTempHigh = kelvinToFahrenheit(currTempHigh) + "°F";
+      currTempHigh += "°F";
       let currTempLow = Math.round(data["list"]["0"]["main"]["temp"]);
       for (let i = 1; i < 8; i++){
         currTempLow = Math.min(currTempLow,Math.round(data["list"][`${i}`]["main"]["temp"]));
       }
-      currTempLow = kelvinToFahrenheit(currTempLow) + "°F";
+      currTempLow += "°F";
 
       //here update the rest of the statistics
       let currentDescription = data["list"]["0"]["weather"]["0"]["description"];
