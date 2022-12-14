@@ -9,8 +9,6 @@ function getSunriseSunset(unix_timestamp) {
   return `${hour}:${min}AM`;
 }
 
-
-
 //returns date from unix UTX
 function unixTimeConverter(unixTimestamp) {
   let date = new Date(unix_timestamp * 1000);
