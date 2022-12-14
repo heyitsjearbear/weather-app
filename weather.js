@@ -1,8 +1,25 @@
+//function returns a string that capitalizes each word of a
+//paramter string
+function capitalizeCity(city) {
+  const wordsArr = city.split(" ");
+  for (let i = 0; i < wordsArr.length; i++){
+    wordsArr[i] = wordsArr[i][0].toUpperCase() + wordsArr[i].substr(1);
+  }
+  const withSpace = wordsArr.join(' ');
+  return withSpace;
+}
+
+
+
+
+
+//retrieve submit button
 let submit = document.querySelector("#submit");
-let temperature = document.querySelector(".degrees-celsius");
+//retrieve city name
+let cityName = document.querySelector('.location-title');
 submit.addEventListener("click", () => {
   let city = document.querySelector("#city-name").value;
-  console.log(`Entered ${city}`);
+  cityName.innerHTML = capitalizeCity(city);
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
       city +
