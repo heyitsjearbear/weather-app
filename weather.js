@@ -80,7 +80,10 @@ submit.addEventListener("click", () => {
         return false;
       }
       console.log(data);
-      let currTempVal = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp"])) +"°F";
+      let currTempVal = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp"])) + "°F";
+      //here we don't have data in JSON to determine high/low
+      //so we have to iterate over 8 hour time period to figure out low,
+      ///might be off a little bit but thats okay :)
       let currTempHigh = Math.round(data["list"]["0"]["main"]["temp"]);
       for (let i = 1; i < 8; i++){
         currTempHigh = Math.max(currTempHigh,Math.round(data["list"][`${i}`]["main"]["temp"]));
@@ -91,11 +94,14 @@ submit.addEventListener("click", () => {
         currTempLow = Math.min(currTempLow,Math.round(data["list"][`${i}`]["main"]["temp"]));
       }
       currTempLow = kelvinToFahrenheit(currTempLow) + "°F";
+
+      //here update the rest of the statistics
       let currentDescription = data["list"]["0"]["weather"]["0"]["description"];
       let currentRainPercentage = (data["list"]["0"]["pop"] * 100) + "%";
       let sunriseTime = getSunriseSunset(data["city"]["sunrise"]);
       let sunsetTime = getSunriseSunset(data["city"]["sunset"]);
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "m/s";
+      //UPDATE DOM HERE
       cityName.innerHTML = capitalizeCity(city);
       mainTemp.innerHTML = currTempVal;
       generalization.innerHTML = currentDescription;
