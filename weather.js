@@ -43,6 +43,8 @@ function capitalizeCity(city) {
 let submit = document.querySelector("#submit");
 //retrieve city name
 let cityName = document.querySelector(".location-title");
+//retrieve weather img
+let mainWeatherIMG = document.querySelector(".weather-image");
 //retrieve currentTemp
 let mainTemp = document.querySelector(".deg");
 //retrieve generalization
@@ -70,15 +72,10 @@ submit.addEventListener("click", () => {
       }
     })
     .then((data) => {
-      //function returns true if description of current day
-      //contain rain
-      //else return false and change rain to 0 percent
-      function isRaining(description) {
-        if (description == "Rain") {
-          return true;
-        }
-        return false;
-      }
+      //function changes weather image based on description
+      // function changeWeatherIMG(description) {
+        
+      // }
       console.log(data);
       let currTempVal = kelvinToFahrenheit(Math.round(data["list"]["0"]["main"]["temp"])) + "°F";
       //here we don't have data in JSON to determine high/low
@@ -101,7 +98,10 @@ submit.addEventListener("click", () => {
       let sunriseTime = getSunriseSunset(data["city"]["sunrise"]);
       let sunsetTime = getSunriseSunset(data["city"]["sunset"]);
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "m/s";
+      let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
+      let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;
       //UPDATE DOM HERE
+      mainWeatherIMG.innerHTML = `<img src= ${mainWeatherIconUrl} />`;
       cityName.innerHTML = capitalizeCity(city);
       mainTemp.innerHTML = currTempVal;
       generalization.innerHTML = currentDescription;
