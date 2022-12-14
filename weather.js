@@ -13,6 +13,8 @@ function getDayName(dateStr)
     return date.toLocaleDateString("en-US", { weekday: 'long' });        
 }
 
+const kelvinToFahrenheit = (kelvin) => 1.8 * (kelvin - 273) + 32;
+
 
 //function returns a string that capitalizes each word of a
 //paramter string
