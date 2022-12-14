@@ -9,13 +9,19 @@ function getSunriseSunset(unix_timestamp) {
   return `${hour}:${min}AM`;
 }
 
+//returns day from unix UTX
+function getDay(unixTimestamp) {
+  let date = new Date(unixTimestamp * 1000);
+  let day = date.getDay();
+  return day; //returns 0,1,2,3,4,5,6 representing weekdays, sunday is 0, monday is 1...
+}
 //returns date from unix UTX
 function unixTimeConverter(unixTimestamp) {
-  let date = new Date(unix_timestamp * 1000);
+  let date = new Date(unixTimestamp * 1000);
   let day = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
-  return `${month + 1}/${day}/${year}`;
+  return `${month + 1}/${day}/${year}`; //returns MM/DD/YYY
 }
 //returns weekday from date
 function getDayName(dateStr) {
@@ -77,13 +83,13 @@ submit.addEventListener("click", () => {
       //so we have to iterate over 8 hour time period to figure out low,
       ///might be off a little bit but thats okay :)
       let currTempHigh = Math.round(data["list"]["0"]["main"]["temp"]);
-      for (let i = 1; i < 8; i++){
-        currTempHigh = Math.max(currTempHigh,Math.round(data["list"][`${i}`]["main"]["temp"]));
+      for (let i = 1; i < 8; i++) {
+        currTempHigh = Math.max(currTempHigh, Math.round(data["list"][`${i}`]["main"]["temp"]));
       }
       currTempHigh += "°F";
       let currTempLow = Math.round(data["list"]["0"]["main"]["temp"]);
-      for (let i = 1; i < 8; i++){
-        currTempLow = Math.min(currTempLow,Math.round(data["list"][`${i}`]["main"]["temp"]));
+      for (let i = 1; i < 8; i++) {
+        currTempLow = Math.min(currTempLow, Math.round(data["list"][`${i}`]["main"]["temp"]));
       }
       currTempLow += "°F";
 
@@ -95,6 +101,15 @@ submit.addEventListener("click", () => {
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "m/s";
       let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
       let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;
+      //change name of weekday for 5-day forecast
+      //first grab date of today we are checking current
+      let currentDayCode = data["list"]["0"]["dt"];
+      let currentWeekday = getDayName(unixTimeConverter(currentDayCode));
+      console.log(currentWeekday);
+      console.log(getDay(currentDayCode));
+      for (let i = 1; i <= 5; i++){
+        document.querySelector(`.day-${i}`).innerHTML = "deez";
+      }
       //UPDATE DOM HERE
       mainWeatherIMG.innerHTML = `<img src= ${mainWeatherIconUrl} />`;
       cityName.innerHTML = capitalizeCity(city);

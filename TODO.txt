@@ -1,2 +1,2 @@
 - add footer
-- edit javascript to change information
+- change 5-day weekday names
