@@ -36,5 +36,5 @@ submit.addEventListener("click", () => {
 
       city = "";
     })
-    .catch((err) => alert("Wrong city name!"));
+    .catch((err) => alert("Invalid city Name! Try Again."));
 });
