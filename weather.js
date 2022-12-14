@@ -1,3 +1,19 @@
+function unixTimeConverter(unixTimestamp) {
+  let date = new Date(unix_timestamp * 1000);
+  let day = date.getDate();
+  let month = date.getMonth();
+  let year = date.getFullYear();
+  return `${month+1}/${day}/${year}`;
+
+
+}
+function getDayName(dateStr)
+{
+    var date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", { weekday: 'long' });        
+}
+
+
 //function returns a string that capitalizes each word of a
 //paramter string
 function capitalizeCity(city) {
