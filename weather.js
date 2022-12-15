@@ -60,6 +60,8 @@ function getWeekDay(num) {
 let submit = document.querySelector("#submit");
 //retrieve city name
 let cityName = document.querySelector(".location-title");
+//retrieve current weather time
+let currentWeatherTimeLBL = document.querySelector(".current-weather-time");
 //retrieve weather img
 let mainWeatherIMG = document.querySelector(".weather-image");
 //retrieve currentTemp
@@ -117,13 +119,12 @@ submit.addEventListener("click", () => {
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "mph";
       let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
       let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;
+      let currentWeatherTime = getSunriseSunset(data["list"]["0"]["dt"]);
       //change name of weekday for 5-day forecast
       //first grab date of today we are checking current
       let currentDayCode = data["list"]["0"]["dt"];
       let currentWeekday = getDayName(unixTimeConverter(currentDayCode));
       console.log(currentWeekday);
-      
-      //TODO make it 3 hour forecast instead of 5 day
       for(let i = 1; i <= 5; i++){
         document.querySelector(`.day-${i}`).innerHTML = getSunriseSunset(data["list"][`${i}`]["dt"]);
       }
@@ -138,6 +139,7 @@ submit.addEventListener("click", () => {
       rain.innerHTML = currentRainPercentage;
       sunrise.innerHTML = sunriseTime;
       sunset.innerHTML = sunsetTime;
+      currentWeatherTimeLBL.innerHTML = `Weather @${currentWeatherTime}`;
       city = "";
     })
     .catch((err) => alert("Invalid city Name! Try Again."));
