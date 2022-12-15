@@ -39,6 +39,20 @@ function capitalizeCity(city) {
   const withSpace = wordsArr.join(" ");
   return withSpace;
 }
+//function returns weekday in string form based off of parameter
+function getWeekDay(num) {
+  switch (num) {
+    case 0: return "Sunday";
+    case 1: return "Monday";
+    case 2: return "Tuesday";
+    case 3: return "Wednesday";
+    case 4: return "Thursday";
+    case 5: return "Friday";
+    case 6: return "Saturday";
+  
+    
+  }
+}
 
 //retrieve submit button
 let submit = document.querySelector("#submit");
@@ -106,9 +120,14 @@ submit.addEventListener("click", () => {
       let currentDayCode = data["list"]["0"]["dt"];
       let currentWeekday = getDayName(unixTimeConverter(currentDayCode));
       console.log(currentWeekday);
+      //output matching day code
       console.log(getDay(currentDayCode));
+      let counter = getDay(currentDayCode) + 1;
       for (let i = 1; i <= 5; i++){
-        document.querySelector(`.day-${i}`).innerHTML = "deez";
+        if (counter == 6) counter = 0;
+        
+        document.querySelector(`.day-${i}`).innerHTML = getWeekDay(counter);
+        counter++;
       }
       //UPDATE DOM HERE
       mainWeatherIMG.innerHTML = `<img src= ${mainWeatherIconUrl} />`;
