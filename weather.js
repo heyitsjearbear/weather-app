@@ -7,6 +7,7 @@ function getSunriseSunset(unix_timestamp) {
     if(min<10) return `${hour - 12}:0${min}PM`;
     return `${hour - 12}:${min}PM`;
   }
+  if(min<10) return `${hour}:0${min}AM`;
   return `${hour}:${min}AM`;
 }
 
@@ -121,9 +122,11 @@ submit.addEventListener("click", () => {
       let currentDayCode = data["list"]["0"]["dt"];
       let currentWeekday = getDayName(unixTimeConverter(currentDayCode));
       console.log(currentWeekday);
-      //output matching day code
-      console.log(getDay(currentDayCode));
+      
       //TODO make it 3 hour forecast instead of 5 day
+      for(let i = 1; i <= 5; i++){
+        document.querySelector(`.day-${i}`).innerHTML = getSunriseSunset(data["list"][`${i}`]["dt"]);
+      }
       //UPDATE DOM HERE
       mainWeatherIMG.innerHTML = `<img src= ${mainWeatherIconUrl} />`;
       cityName.innerHTML = capitalizeCity(city);
