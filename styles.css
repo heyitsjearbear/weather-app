@@ -89,6 +89,7 @@ body {
   color: white;
   margin: 0 auto;
   width: 700px;
+  padding-top: 38px;
 }
 .card{
   background-color: rgba(255, 255, 255, 0.168);
