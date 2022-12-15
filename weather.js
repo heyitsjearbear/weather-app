@@ -112,7 +112,7 @@ submit.addEventListener("click", () => {
       let currentRainPercentage = (data["list"]["0"]["pop"] * 100) + "%";
       let sunriseTime = getSunriseSunset(data["city"]["sunrise"]);
       let sunsetTime = getSunriseSunset(data["city"]["sunset"]);
-      let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "m/s";
+      let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "mph";
       let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
       let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;
       //change name of weekday for 5-day forecast
