@@ -38,6 +38,7 @@
   text-align: center;
 }
 html{
+  background-color: black;
   background: url("assets/mtnlandscape.jpg")
     no-repeat center center fixed;
   -webkit-background-size: cover;
