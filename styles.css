@@ -9,27 +9,6 @@
     transform: translateY(0);
   }
 }
-@media (max-width: 500px){
-  .title{
-    text-align: center;
-  }
-  .next-5-days {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    color: white;
-    padding-top: 0px;
-  }
-  .card{
-    background-color: rgba(255, 255, 255, 0.168);
-    text-align: center;
-    width: 100px;
-    margin-bottom: 20px;
-  
-  }
-}
 .heading {
   height: 310px;
   text-align: center;
@@ -122,4 +101,19 @@ body {
   background-color: rgba(255, 255, 255, 0.168);
   text-align: center;
   width: 100px;
+}
+
+@media (max-width: 600px){
+  .heading{
+    height: 175px;
+  }
+  .title{
+    font-size: 20px;
+  }
+  .location-title{
+    font-size: 20px;
+  }
+  .card{
+    width: 52px;
+  }
 }
