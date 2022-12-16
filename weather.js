@@ -121,9 +121,9 @@ submit.addEventListener("click", () => {
 
       //here update the rest of the statistics
       let currentDescription = data["list"]["0"]["weather"]["0"]["description"];
-      let currentRainPercentage = (data["list"]["0"]["pop"] * 100) + "%";
+      let currentRainPercentage = Math.round((data["list"]["0"]["pop"] * 100)) + "%";
       let pressure = data["list"]["0"]["main"]["pressure"] + "hPa";
-      let humidity = data["list"]["0"]["main"]["humidity"] + "%";
+      let humidity = Math.round(data["list"]["0"]["main"]["humidity"]) + "%";
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "mph";
       let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
       let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;

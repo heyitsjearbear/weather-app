@@ -104,8 +104,11 @@ body {
 }
 
 @media (max-width: 600px){
+  .day{
+    font-size: 11px;
+  }
   .weather{
-    width: 260px;
+    width: 283px;
     font-size: 12px;
   }
   .heading{
@@ -118,6 +121,6 @@ body {
     font-size: 20px;
   }
   .card{
-    width: 52px;
+    width: 66px;
   }
 }
