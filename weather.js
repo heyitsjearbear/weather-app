@@ -70,8 +70,8 @@ let high = document.querySelector('#high');
 let low = document.querySelector('#low');
 let wind = document.querySelector('#wind');
 let rain = document.querySelector('#rain');
-let sunrise = document.querySelector('#sunrise');
-let sunset = document.querySelector('#sunset');
+let pressureLBL = document.querySelector('#pressure');
+let humidityLBL = document.querySelector('#humidity');
 
 //submit button event
 submit.addEventListener("click", () => {
@@ -112,8 +112,8 @@ submit.addEventListener("click", () => {
       //here update the rest of the statistics
       let currentDescription = data["list"]["0"]["weather"]["0"]["description"];
       let currentRainPercentage = (data["list"]["0"]["pop"] * 100) + "%";
-      let sunriseTime = getSunriseSunset(data["city"]["sunrise"]);
-      let sunsetTime = getSunriseSunset(data["city"]["sunset"]);
+      let pressure = data["list"]["0"]["main"]["pressure"] + "hPa";
+      let humidity = data["list"]["0"]["main"]["humidity"] + "%";
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "mph";
       let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
       let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;
@@ -135,8 +135,8 @@ submit.addEventListener("click", () => {
       low.innerHTML = currTempLow;
       wind.innerHTML = windSpeed;
       rain.innerHTML = currentRainPercentage;
-      sunrise.innerHTML = sunriseTime;
-      sunset.innerHTML = sunsetTime;
+      pressureLBL.innerHTML = pressure;
+      humidityLBL.innerHTML = humidity;
       city = "";
     })
     .catch((err) => alert("Invalid city Name! Try Again."));
