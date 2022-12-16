@@ -104,6 +104,10 @@ body {
 }
 
 @media (max-width: 600px){
+  .weather{
+    width: 260px;
+    font-size: 12px;
+  }
   .heading{
     height: 175px;
   }
