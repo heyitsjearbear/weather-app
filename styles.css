@@ -13,6 +13,9 @@
   height: 400px;
   text-align: center;
 }
+.input-field{
+  text-align: center;
+}
 body {
   animation: transitionIn 0.75s;
   background: url("assets/mtnlandscape.jpg")
@@ -25,6 +28,7 @@ body {
   -webkit-text-stroke-width: .35px;
   -webkit-text-stroke-color: black;
 }
+
 
 .heading-elements {
   margin: 0 auto;

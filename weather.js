@@ -67,6 +67,7 @@ function getWeekDay(num) {
   }
 }
 
+let driver = document.querySelector('.main');
 //retrieve submit button
 let submit = document.querySelector("#submit");
 //retrieve city name
@@ -100,11 +101,9 @@ submit.addEventListener("click", () => {
       }
     })
     .then((data) => {
-      //function changes weather image based on description
-      // function changeWeatherIMG(description) {
-        
-      // }
-      console.log(data);
+      driver.style.opacity = 0;
+      setTimeout(() => {
+        console.log(data);
       let currTempVal = Math.round(data["list"]["0"]["main"]["temp"]) + "°F";
       //here we don't have data in JSON to determine high/low
       //so we have to iterate over 8 hour time period to figure out low,
@@ -151,7 +150,8 @@ submit.addEventListener("click", () => {
       rain.innerHTML = currentRainPercentage;
       pressureLBL.innerHTML = pressure;
       humidityLBL.innerHTML = humidity;
-      city = "";
+      driver.style.opacity = 100;
+      }, "500");
     })
     .catch((err) => alert("Invalid city Name! Try Again."));
 });
