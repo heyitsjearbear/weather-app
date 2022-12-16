@@ -1,3 +1,14 @@
+//function returns time UTC
+function getTime(dt_text1) {
+  let time1 = dt_text1.split(" ").pop();
+  hour1 = time1.substr(0, time1.indexOf(":"));
+  console.log(hour1);
+  return hour1 + ":00UTC";
+  
+}
+
+
+
 //function returns sunrise/sunset time as string
 function getSunriseSunset(unix_timestamp) {
   let date = new Date(unix_timestamp * 1000);
@@ -124,7 +135,7 @@ submit.addEventListener("click", () => {
       let currentWeekday = getDayName(unixTimeConverter(currentDayCode));
       console.log(currentWeekday);
       for(let i = 1; i <= 5; i++){
-        document.querySelector(`.day-${i}`).innerHTML = getSunriseSunset(data["list"][`${i}`]["dt"]);
+        document.querySelector(`.day-${i}`).innerHTML = getTime(data["list"][`${i}`]["dt_txt"]);
       }
       //UPDATE DOM HERE
       mainWeatherIMG.innerHTML = `<img src= ${mainWeatherIconUrl} />`;
