@@ -60,8 +60,6 @@ function getWeekDay(num) {
 let submit = document.querySelector("#submit");
 //retrieve city name
 let cityName = document.querySelector(".location-title");
-//retrieve current weather time
-let currentWeatherTimeLBL = document.querySelector(".current-weather-time");
 //retrieve weather img
 let mainWeatherIMG = document.querySelector(".weather-image");
 //retrieve currentTemp
@@ -139,7 +137,6 @@ submit.addEventListener("click", () => {
       rain.innerHTML = currentRainPercentage;
       sunrise.innerHTML = sunriseTime;
       sunset.innerHTML = sunsetTime;
-      currentWeatherTimeLBL.innerHTML = `Weather @${currentWeatherTime}`;
       city = "";
     })
     .catch((err) => alert("Invalid city Name! Try Again."));
