@@ -9,8 +9,29 @@
     transform: translateY(0);
   }
 }
+@media (max-width: 500px){
+  .title{
+    text-align: center;
+  }
+  .next-5-days {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    padding-top: 0px;
+  }
+  .card{
+    background-color: rgba(255, 255, 255, 0.168);
+    text-align: center;
+    width: 100px;
+    margin-bottom: 20px;
+  
+  }
+}
 .heading {
-  height: 400px;
+  height: 310px;
   text-align: center;
 }
 .input-field{
@@ -92,7 +113,7 @@ body {
   border-radius: 20px;
   color: white;
   margin: 0 auto;
-  width: 700px;
+  max-width: 700px;
   padding-top: 38px;
 }
 .card{
