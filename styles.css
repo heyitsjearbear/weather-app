@@ -53,7 +53,6 @@ body {
 
 .heading-elements {
   margin: 0 auto;
-  width: 480px;
 }
 .title {
   color: white;
@@ -84,7 +83,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
-  width: 480px;
+  width: 416px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
