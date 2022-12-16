@@ -128,7 +128,6 @@ submit.addEventListener("click", () => {
       let windSpeed = (data["list"]["0"]["wind"]["speed"]) + "mph";
       let mainWeatherIcon = data["list"]["0"]["weather"]["0"]["icon"];
       let mainWeatherIconUrl = `http://openweathermap.org/img/wn/${mainWeatherIcon}.png`;
-      let currentWeatherTime = getSunriseSunset(data["list"]["0"]["dt"]);
       //change name of weekday for 5-day forecast
       //first grab date of today we are checking current
       let currentDayCode = data["list"]["0"]["dt"];
@@ -136,6 +135,10 @@ submit.addEventListener("click", () => {
       console.log(currentWeekday);
       for(let i = 1; i <= 5; i++){
         document.querySelector(`.day-${i}`).innerHTML = getTime(data["list"][`${i}`]["dt_txt"]);
+        document.querySelector(`.degrees-${i}`).innerHTML = Math.round(data["list"][`${i}`]["main"]["temp"]) + "°F";
+        let icon = data["list"][`${i}`]["weather"]["0"]["icon"];
+        let iconURL = `http://openweathermap.org/img/wn/${icon}.png`;
+        document.querySelector(`.image-${i}`).innerHTML = `<img src="${iconURL}" />`;
       }
       //UPDATE DOM HERE
       mainWeatherIMG.innerHTML = `<img src= ${mainWeatherIconUrl} />`;
